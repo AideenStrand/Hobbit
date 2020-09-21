@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.data.ResponseJson;
-import project.service.CustomerService;
+import project.service.GalacService;
 
 import javax.validation.constraints.NotBlank;
 
@@ -15,9 +15,9 @@ import javax.validation.constraints.NotBlank;
 public class GalacController {
 
     @Autowired
-    private CustomerService galacService;
+    private GalacService galacService;
 
-    @GetMapping(value = "/api/customer/{id}")
+    @GetMapping(value = "/api/client/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ResponseJson> getJsonMethod(
             @NotBlank @RequestHeader(name = "secret") String secret,

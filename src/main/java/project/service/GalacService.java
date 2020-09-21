@@ -11,7 +11,7 @@ import project.data.ResponseJson;
 
 @Slf4j
 @Service
-public class CustomerService {
+public class GalacService {
 
     @Autowired
     private GalacServiceClient galacServiceClient;

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="" />
+    <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/api/GalacController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/api/GalacController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/service/GalacService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/service/TextWriter.java" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +28,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -39,6 +49,7 @@
     <property name="LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled" value="false" />
     <property name="LombokPluginIS_MISSING_LOMBOK_CHECK_Enabled" value="true" />
     <property name="LombokPluginIS_VAL_Enabled" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
@@ -81,7 +92,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServiceRun">
+  <component name="RunManager" selected="Application.aideen">
     <configuration name="ServiceRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="project.ServiceRun" />
       <option name="VM_PARAMETERS" value="-Dspring.profiles.active=local" />
@@ -109,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Galactica" />
       <extension name="coverage">
         <pattern>
@@ -155,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="project.service in aideen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="project.service in Galactica" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Galactica" />
       <extension name="coverage">
         <pattern>
@@ -172,7 +183,7 @@
     <list>
       <item itemvalue="Application.ServiceRun" />
       <item itemvalue="Application.aideen" />
-      <item itemvalue="JUnit.project.service in aideen" />
+      <item itemvalue="JUnit.project.service in Galactica" />
       <item itemvalue="JUnit.TestServiceTest" />
       <item itemvalue="JUnit.TestServiceTest (1)" />
       <item itemvalue="JUnit.TestServiceTest.testCustomerGetMethod" />
@@ -200,6 +211,19 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -219,7 +243,7 @@
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/project/service/CustomerService.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/project/service/GalacService.java</url>
           <line>20</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
