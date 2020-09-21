@@ -45,7 +45,7 @@ server:
   port: 8081
 remedy:
   username:
-    secret: webeone
+    secret: web
   password:
-    secret: summer2020
+    secret: spring2021
 client:
