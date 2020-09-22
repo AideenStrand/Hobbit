@@ -17,13 +17,13 @@ public class GalacController {
     @Autowired
     private GalacService galacService;
 
-    @GetMapping(value = "/api/client/{id}")
+    @GetMapping(value = "/api/client/{status}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ResponseJson> getJsonMethod(
             @NotBlank @RequestHeader(name = "secret") String secret,
-            @NotBlank @PathVariable(name = "id") String id) {
+            @NotBlank @PathVariable(name = "status") String status) {
         try {
-            return new ResponseEntity<>(galacService.getAip(id), HttpStatus.OK);
+            return new ResponseEntity<>(galacService.getAip(status), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

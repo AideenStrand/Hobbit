@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/api/GalacController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/api/GalacController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/client/GalacServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/client/GalacServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/service/GalacService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/service/GalacService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/api/GalacController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/api/GalacController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/client/GalacServiceClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/client/GalacServiceClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/service/TextWriter.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,15 +189,13 @@
       <item itemvalue="Application.aideen" />
       <item itemvalue="JUnit.project.service in Galactica" />
       <item itemvalue="JUnit.TestServiceTest" />
-      <item itemvalue="JUnit.TestServiceTest (1)" />
       <item itemvalue="JUnit.TestServiceTest.testCustomerGetMethod" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServiceRun" />
         <item itemvalue="Application.aideen" />
+        <item itemvalue="Application.ServiceRun" />
         <item itemvalue="JUnit.TestServiceTest.testCustomerGetMethod" />
-        <item itemvalue="JUnit.TestServiceTest (1)" />
         <item itemvalue="JUnit.TestServiceTest" />
       </list>
     </recent_temporary>
@@ -229,18 +236,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/project/service/TestServiceTest.java</url>
-          <line>17</line>
+          <line>7</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/project/client/GalacServiceClient.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/project/service/GalacService.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="30" />
+          <line>29</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

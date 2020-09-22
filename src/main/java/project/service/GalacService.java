@@ -8,6 +8,7 @@ import project.data.CostumerInformation;
 import project.data.Petstore;
 import project.data.ResponseJson;
 
+import java.util.List;
 
 @Slf4j
 @Service
@@ -16,16 +17,16 @@ public class GalacService {
     @Autowired
     private GalacServiceClient galacServiceClient;
 
-    public ResponseJson getAip(String id) {
+    public ResponseJson getAip(String status) {
         ResponseJson responseJson = new ResponseJson();
-        Petstore petstore = galacServiceClient.getResponseFromDatabase(id);
+        List<Petstore> petstore = galacServiceClient.getResponseFromDatabase(status);
 
-        String name = petstore.getName();
+        String name = petstore.stream().map(c->c.getName()).findFirst().orElse(null);
 
         CostumerInformation costumerInformation = new CostumerInformation.MyBuilder()
                 .name(name)
                 .family("berger")
-                .personalId(id)
+                .personalId("12")
                 .myBuild();
 
         responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
