@@ -19,7 +19,7 @@ public class GalacServiceClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("{client.petstore.url}")
+    @Value("${client.petstore.url}")
     private String petstoreUrl;
 
     private final static String STATUS = "status";
@@ -27,8 +27,8 @@ public class GalacServiceClient {
     public List<Petstore> getResponseFromDatabase(String status) {
         ResponseEntity<List<Petstore>> responseEntity;
         try {
-            responseEntity = restTemplate.exchange("https://petstore.swagger.io/v2/pet/findByStatus" + "?"
-                            + STATUS  + "=" + status,
+            responseEntity = restTemplate.exchange(petstoreUrl + "?"
+                            + STATUS + "=" + status,
                     HttpMethod.GET,
                     null,
                     new ParameterizedTypeReference<List<Petstore>>() {
