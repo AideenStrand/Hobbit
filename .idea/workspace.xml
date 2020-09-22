@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/client/GalacServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/client/GalacServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/data/TimeRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/api/GalacController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/client/GalacServiceClient$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/client/GalacServiceClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/config/RestTemplateConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/service/GalacService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/service/TestServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/service/TestServiceTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,10 +24,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -231,9 +239,9 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/project/client/GalacServiceClient.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="32" />
+          <url>file://$PROJECT_DIR$/src/main/java/project/service/ClientService.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
