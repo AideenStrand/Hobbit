@@ -4,13 +4,13 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
-import project.client.GalacServiceClient;
+import project.client.ClientServiceHttp;
 
 @RunWith(SpringRunner.class)
 public class TestServiceTest {
 
     @Mock
-    private GalacServiceClient galacServiceClient;
+    private ClientServiceHttp galacServiceClient;
 
     @Mock
     private RestTemplate restTemplate;

@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class GalacServiceClient {
+public class ClientServiceHttp {
 
     @Autowired
     private RestTemplate restTemplate;

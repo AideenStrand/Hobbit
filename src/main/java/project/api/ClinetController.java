@@ -6,16 +6,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.data.ResponseJson;
-import project.service.GalacService;
+import project.service.ClientService;
 
 import javax.validation.constraints.NotBlank;
 
 @Slf4j
 @RestController
-public class GalacController {
+public class ClinetController {
 
     @Autowired
-    private GalacService galacService;
+    private ClientService galacService;
 
     @GetMapping(value = "/api/client/{status}")
     @ResponseStatus(HttpStatus.OK)
