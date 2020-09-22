@@ -2,6 +2,7 @@ package project.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import project.client.ClientServiceHttp;
@@ -19,13 +20,15 @@ import java.util.List;
 public class ClientService implements TimeRegister {
 
     @Autowired
-    private ClientServiceHttp galacServiceClient;
+    private ClientServiceHttp clientServiceHttp;
 
     private final static String BIRTHDATE = "12/03/1980";
 
     public ResponseJson getAip(String status) {
         ResponseJson responseJson = new ResponseJson();
-        List<Petstore> petstore = galacServiceClient.getResponseFromDatabase(status);
+        List<Petstore> petstore = clientServiceHttp.makeRequest(status,
+                new ParameterizedTypeReference<List<Petstore>>() {
+                });
         String name = petstore.stream().map(c -> c.getName()).findFirst().orElse(null);
         if (fixBirthDate(BIRTHDATE)) {
             CostumerInformation costumerInformation = new CostumerInformation.MyBuilder()
@@ -50,4 +53,5 @@ public class ClientService implements TimeRegister {
         }
         return true;
     }
+
 }

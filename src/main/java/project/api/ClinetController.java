@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 public class ClinetController {
 
     @Autowired
-    private ClientService galacService;
+    private ClientService clientService;
 
     @GetMapping(value = "/api/client/{status}")
     @ResponseStatus(HttpStatus.OK)
@@ -23,7 +23,7 @@ public class ClinetController {
             @NotBlank @RequestHeader(name = "secret") String secret,
             @NotBlank @PathVariable(name = "status") String status) {
         try {
-            return new ResponseEntity<>(galacService.getAip(status), HttpStatus.OK);
+            return new ResponseEntity<>(clientService.getAip(status), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

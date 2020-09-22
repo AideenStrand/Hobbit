@@ -10,6 +10,7 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import project.data.Petstore;
 
+import java.net.URI;
 import java.util.List;
 
 @Service
@@ -24,18 +25,18 @@ public class ClientServiceHttp {
 
     private final static String STATUS = "status";
 
-    public List<Petstore> getResponseFromDatabase(String status) {
-        ResponseEntity<List<Petstore>> responseEntity;
+    public <T> List<T> makeRequest(String status, ParameterizedTypeReference<List<T>> responseType) {
+        ResponseEntity<List<T>> response;
         try {
-            responseEntity = restTemplate.exchange(petstoreUrl + "?"
+            response = restTemplate.exchange(
+                    petstoreUrl + "?"
                             + STATUS + "=" + status,
                     HttpMethod.GET,
                     null,
-                    new ParameterizedTypeReference<List<Petstore>>() {
-                    });
+                    responseType);
         } catch (RestClientException e) {
             throw new RestClientException("error happend calling endpoint");
         }
-        return responseEntity.getBody();
+        return response.getBody();
     }
 }
