@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/service/productService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/config/KafkaProducerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/client/ClientServiceHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/client/ClientServiceHttp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/api/ClinetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/api/ClinetController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/service/ClientService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/service/ClientService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/service/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/service/ClientService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,7 +58,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
     <property name="settings.editor.splitter.proportion" value="0.33136094" />
   </component>
   <component name="RecentsManager">
