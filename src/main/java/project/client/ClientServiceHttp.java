@@ -25,7 +25,7 @@ public class ClientServiceHttp {
 
     private final static String STATUS = "status";
 
-    public <T> List <T> makeRequest(String status, ParameterizedTypeReference<List<T>> responseType) {
+    public <T> List<T> makeRequest(String status, ParameterizedTypeReference<List<T>> responseType) {
         ResponseEntity<List<T>> response;
         try {
             response = restTemplate.exchange(

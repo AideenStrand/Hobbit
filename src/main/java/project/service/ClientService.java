@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 import project.client.ClientServiceHttp;
 import project.data.CostumerInformation;
 import project.data.Petstore;
@@ -12,8 +11,7 @@ import project.data.ResponseJson;
 import project.data.TimeRegister;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -24,23 +22,37 @@ public class ClientService implements TimeRegister {
 
     private final static String BIRTHDATE = "12/03/1980";
 
-    public ResponseJson getAip(String status) {
-        ResponseJson responseJson = new ResponseJson();
+    public List<ResponseJson> getAip(String status) {
+
+        List<ResponseJson> responseJsonList = new LinkedList<>();
         List<Petstore> petstore = clientServiceHttp.makeRequest(status,
                 new ParameterizedTypeReference<List<Petstore>>() {
                 });
-        String name = petstore.stream().map(c -> c.getName()).findFirst().orElse(null);
-        if (fixBirthDate(BIRTHDATE)) {
-            CostumerInformation costumerInformation = new CostumerInformation.MyBuilder()
-                    .name(name)
-                    .family("berger")
-                    .personalId("12")
-                    .myBuild();
-            responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
-            responseJson.setCostumerInformation(costumerInformation);
 
+        HashMap<String, String> customerName = nameFamilyMaker();
+        CostumerInformation costumerInformation = null;
+        
+        if (fixBirthDate(BIRTHDATE)) {
+            for (Map.Entry name : customerName.entrySet()) {
+                ResponseJson responseJson = new ResponseJson();
+                costumerInformation = new CostumerInformation.MyBuilder()
+                        .name(name.getKey().toString())
+                        .family(name.getValue().toString())
+                        .personalId(petstore.stream().map(c -> c.getId()).findFirst().orElse(null))
+                        .myBuild();
+                responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
+                responseJson.setCostumerInformation(costumerInformation);
+                responseJsonList.add(responseJson);
+            }
         }
-        return responseJson;
+        return responseJsonList;
+    }
+
+    private <T> T nameFamilyMaker() {
+        HashMap<String, String> customerName = new HashMap<>();
+        customerName.put("cai", "berger");
+        customerName.put("narges", "amiri");
+        return (T) customerName;
     }
 
     @Override
