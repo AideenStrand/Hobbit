@@ -31,7 +31,7 @@ public class ClientService implements TimeRegister {
 
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation = null;
-        
+
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
