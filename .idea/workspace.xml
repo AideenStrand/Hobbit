@@ -23,22 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/config/JsonPatchHttpMessageConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/api/ClinetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/api/ClinetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/client/ClientServiceHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/client/ClientServiceHttp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/config/JsonPatchHttpMessageConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/config/JsonPatchHttpMessageConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/api/ClinetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/api/ClinetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/service/ClientService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/service/ClientService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/service/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/service/ClientService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/spring-sync" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/spring-web-mvc-samples/pom.xml" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -259,42 +248,42 @@
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
     <state x="2661" y="132" key="#xdebugger.evaluate/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602593767969" />
-    <state x="2686" y="184" key="FileChooserDialogImpl" timestamp="1602592839568">
+    <state x="2686" y="184" key="FileChooserDialogImpl" timestamp="1602597248589">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state x="2686" y="184" key="FileChooserDialogImpl/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602592839568" />
-    <state width="1871" height="131" key="GridCell.Tab.0.bottom" timestamp="1602595053032">
+    <state x="2686" y="184" key="FileChooserDialogImpl/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602597248589" />
+    <state width="1871" height="139" key="GridCell.Tab.0.bottom" timestamp="1602596856633">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
-    <state width="1871" height="131" key="GridCell.Tab.0.center" timestamp="1602595053032">
+    <state width="1871" height="139" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856633" />
+    <state width="1871" height="139" key="GridCell.Tab.0.center" timestamp="1602596856633">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.0.center/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
-    <state width="1871" height="131" key="GridCell.Tab.0.left" timestamp="1602595053032">
+    <state width="1871" height="139" key="GridCell.Tab.0.center/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856633" />
+    <state width="1871" height="139" key="GridCell.Tab.0.left" timestamp="1602596856633">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.0.left/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
-    <state width="1871" height="131" key="GridCell.Tab.0.right" timestamp="1602595053032">
+    <state width="1871" height="139" key="GridCell.Tab.0.left/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856633" />
+    <state width="1871" height="139" key="GridCell.Tab.0.right" timestamp="1602596856633">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.0.right/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
-    <state width="1871" height="131" key="GridCell.Tab.1.bottom" timestamp="1602595053033">
+    <state width="1871" height="139" key="GridCell.Tab.0.right/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856633" />
+    <state width="0" height="0" key="GridCell.Tab.1.bottom" timestamp="1602596856570">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
-    <state width="1871" height="131" key="GridCell.Tab.1.center" timestamp="1602595053033">
+    <state width="0" height="0" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856570" />
+    <state width="0" height="0" key="GridCell.Tab.1.center" timestamp="1602596856570">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.1.center/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
-    <state width="1871" height="131" key="GridCell.Tab.1.left" timestamp="1602595053033">
+    <state width="0" height="0" key="GridCell.Tab.1.center/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856570" />
+    <state width="0" height="0" key="GridCell.Tab.1.left" timestamp="1602596856570">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.1.left/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
-    <state width="1871" height="131" key="GridCell.Tab.1.right" timestamp="1602595053033">
+    <state width="0" height="0" key="GridCell.Tab.1.left/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856570" />
+    <state width="0" height="0" key="GridCell.Tab.1.right" timestamp="1602596856570">
       <screen x="1920" y="-91" width="1920" height="1040" />
     </state>
-    <state width="1871" height="131" key="GridCell.Tab.1.right/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
+    <state width="0" height="0" key="GridCell.Tab.1.right/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602596856570" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -317,7 +306,12 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/project/api/ClinetController.java</url>
           <line>55</line>
-          <option name="timeStamp" value="46" />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/api/ClinetController.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

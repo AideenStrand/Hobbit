@@ -53,6 +53,7 @@ public class ClinetController {
     public ResponseEntity<String> getpatch(
             @RequestBody JsonPatch jsonPatch){
         try {
+            System.out.println("");
             return new ResponseEntity<String>(clientService.modifyInfo(jsonPatch), HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

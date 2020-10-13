@@ -13,6 +13,7 @@ import javax.json.Json;
 import javax.json.JsonReader;
 import javax.json.JsonWriter;
 
+
 @Component
 public class JsonPatchHttpMessageConverter extends AbstractHttpMessageConverter<javax.json.JsonPatch> {
 
