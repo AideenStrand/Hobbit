@@ -1,8 +1,10 @@
 package project.api;
 
+import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +12,8 @@ import project.data.ResponseJson;
 import project.service.ClientService;
 
 import javax.validation.constraints.NotBlank;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.PATCH;
 import java.util.List;
 
 @Slf4j
@@ -43,4 +47,16 @@ public class ClinetController {
         kafkaTemplate.send(TOPIC, message);
         return "publish successfully";
     }
+
+    @PatchMapping(value = "/api/modifyInfo", consumes = "application/json-patch+json")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<String> getpatch(
+            @RequestBody JsonPatch jsonPatch){
+        try {
+            return new ResponseEntity<String>(clientService.modifyInfo(jsonPatch), HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }

@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/config/JsonPatchHttpMessageConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/api/ClinetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/api/ClinetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/client/ClientServiceHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/client/ClientServiceHttp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/api/ClinetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/api/ClinetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/config/KafkaProducerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/config/KafkaProducerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/client/ClientServiceHttp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/service/ClientService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/service/ClientService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/project/service/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/service/ClientService.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="aideen" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,11 +58,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/api/ClinetController.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1e5HMvoFlsxYa4OK0mNB6WPDLYd" />
@@ -55,7 +82,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/spring-sync" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -66,10 +93,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="project.service" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -82,18 +109,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\as945197\project\aideen\src\main\java\project\config" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.aideen">
     <configuration name="ServiceRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -119,6 +134,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -217,13 +243,58 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2711" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1602594291253">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state x="2711" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602594291253" />
+    <state x="2661" y="132" key="#xdebugger.evaluate" timestamp="1602593767969">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state x="2661" y="132" key="#xdebugger.evaluate/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602593767969" />
+    <state x="2686" y="184" key="FileChooserDialogImpl" timestamp="1602592839568">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state x="2686" y="184" key="FileChooserDialogImpl/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602592839568" />
+    <state width="1871" height="131" key="GridCell.Tab.0.bottom" timestamp="1602595053032">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.0.bottom/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
+    <state width="1871" height="131" key="GridCell.Tab.0.center" timestamp="1602595053032">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.0.center/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
+    <state width="1871" height="131" key="GridCell.Tab.0.left" timestamp="1602595053032">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.0.left/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
+    <state width="1871" height="131" key="GridCell.Tab.0.right" timestamp="1602595053032">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.0.right/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053032" />
+    <state width="1871" height="131" key="GridCell.Tab.1.bottom" timestamp="1602595053033">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.1.bottom/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
+    <state width="1871" height="131" key="GridCell.Tab.1.center" timestamp="1602595053033">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.1.center/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
+    <state width="1871" height="131" key="GridCell.Tab.1.left" timestamp="1602595053033">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.1.left/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
+    <state width="1871" height="131" key="GridCell.Tab.1.right" timestamp="1602595053033">
+      <screen x="1920" y="-91" width="1920" height="1040" />
+    </state>
+    <state width="1871" height="131" key="GridCell.Tab.1.right/0.0.1280.680/1920.-91.1920.1040@1920.-91.1920.1040" timestamp="1602595053033" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -240,8 +311,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/project/service/ClientService.java</url>
-          <line>44</line>
+          <line>46</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/api/ClinetController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

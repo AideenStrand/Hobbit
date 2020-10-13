@@ -1,8 +1,10 @@
 package project.service;
 
+import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import project.client.ClientServiceHttp;
 import project.data.CostumerInformation;
@@ -31,7 +33,7 @@ public class ClientService implements TimeRegister {
 
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation = null;
-        
+
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
@@ -66,4 +68,7 @@ public class ClientService implements TimeRegister {
         return true;
     }
 
+    public String modifyInfo(JsonPatch jsonPatch) {
+        return null;
+    }
 }
