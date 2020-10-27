@@ -60,4 +60,14 @@ public class ClinetController {
         }
     }
 
+    @GetMapping(value = "/api/database")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Object> getDataFromdatabase() {
+        try {
+            return new ResponseEntity<>(clientService.getData(), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }

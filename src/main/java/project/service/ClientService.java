@@ -2,15 +2,18 @@ package project.service;
 
 import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.yetus.audience.InterfaceAudience;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import project.client.ClientServiceHttp;
+import project.client.DatabaseHttp;
 import project.data.CostumerInformation;
 import project.data.Petstore;
 import project.data.ResponseJson;
 import project.data.TimeRegister;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -20,6 +23,9 @@ public class ClientService implements TimeRegister {
 
     @Autowired
     private ClientServiceHttp clientServiceHttp;
+
+    @Autowired
+    private DatabaseHttp databaseHttp;
 
     private final static String BIRTHDATE = "12/03/1980";
 
@@ -49,6 +55,11 @@ public class ClientService implements TimeRegister {
         return responseJsonList;
     }
 
+    public Object getData() throws SQLException {
+        databaseHttp.getDatafromW3();
+        return null;
+    }
+
     private <T> T nameFamilyMaker() {
         HashMap<String, String> customerName = new HashMap<>();
         customerName.put("cai", "berger");
@@ -70,4 +81,14 @@ public class ClientService implements TimeRegister {
     public String modifyInfo(JsonPatch jsonPatch) {
         return null;
     }
+
+
+    public  Map<String, String> ValidateUrl() {
+
+    Map<String, String> pathUrl = new HashMap<>();
+
+    
+    return pathUrl;
+
+}
 }
