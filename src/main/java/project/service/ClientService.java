@@ -2,7 +2,6 @@ package project.service;
 
 import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.yetus.audience.InterfaceAudience;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
@@ -30,15 +29,12 @@ public class ClientService implements TimeRegister {
     private final static String BIRTHDATE = "12/03/1980";
 
     public List<ResponseJson> getAip(String status) {
-
         List<ResponseJson> responseJsonList = new LinkedList<>();
         List<Petstore> petstore = clientServiceHttp.makeRequest(status,
                 new ParameterizedTypeReference<List<Petstore>>() {
                 });
-
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation = null;
-
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
@@ -82,13 +78,9 @@ public class ClientService implements TimeRegister {
         return null;
     }
 
+    public Map<String, String> ValidateUrl() {
+        Map<String, String> pathUrl = new HashMap<>();
+        return pathUrl;
 
-    public  Map<String, String> ValidateUrl() {
-
-    Map<String, String> pathUrl = new HashMap<>();
-
-    
-    return pathUrl;
-
-}
+    }
 }
