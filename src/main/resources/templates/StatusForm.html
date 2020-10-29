@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Friend form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/main.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="center">
+
+<h2>Hobbit Customer Site</h2>
+<p>
+    Choose which <strong>customer list</strong> you search:
+</p>
+
+<form th:action="@{/customer}" th:object="${status}" method="post">
+    <p>Name: <input type="text" th:field="*{value}"/></p>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+
+</div>
+
+</body>
+</html>

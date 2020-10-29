@@ -1,0 +1,31 @@
+body {
+  background-color: #FAEBD7;
+}
+
+.center {
+  width: 40%;
+  border: 5px solid #696969;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  margin-top: -10px;
+  margin-left: -50px;
+  text-align: center;
+
+}
+
+
+h2 {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+strong {
+    font-weight: 700;
+    background-color: yellow;
+}
+
+p {
+    font-family: sans-serif;
+}
