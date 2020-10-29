@@ -14,12 +14,38 @@ body {
 
 }
 
+.centerDiv {
+  width: 40%;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  margin-top: -10px;
+  margin-left: -40px;
+  text-align: center;
 
-h2 {
-    font-family: sans-serif;
-    font-size: 1.5em;
-    text-transform: uppercase;
 }
+
+.centerTable{
+  top: 30%;
+  left: 30%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  top: 30%;
+    left: 30%;
+  margin-top: 50px;
+  margin-left: 50px;
+ border-spacing: 10px;
+    border-collapse: separate;
+
+}
+
+/*
+h2 {
+  text-align: center;
+}
+*/
 
 strong {
     font-weight: 700;

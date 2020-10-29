@@ -7,7 +7,28 @@
 </head>
 <body>
 
-<p th:text="'Hello, ' + ${status[0].getCompleteName()} + '!'" />
+<!--<p th:text="${customerList[0].getCostumerInformation().getFamily()}" />-->
 
+<h2 class="centerDiv">List of availabel Customers</h2>
+
+
+<div th:if="${not #lists.isEmpty(customerList)}" >
+    <table class="center">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Family</th>
+            <th>PersonalId</th>
+        </tr>
+
+        <tr th:each="customer : ${customerList}">
+            <td th:text="${customer.getCompleteName()}"></td>
+            <td th:text="${customer.getCostumerInformation().getName()}"></td>
+            <td th:text="${customer.getCostumerInformation().getFamily()}"></td>
+            <td th:text="${customer.getCostumerInformation().getPersonalId()}"></td>
+        </tr>
+    </table>
+
+</div>
 </body>
 </html>
