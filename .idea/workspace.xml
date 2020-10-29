@@ -24,6 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/api/WebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/api/WebController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/data/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/StatusForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/StatusForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/friendsForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -307,6 +312,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/project/client/DatabaseHttp.java</url>
           <line>25</line>
           <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/api/WebController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
