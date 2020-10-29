@@ -3,12 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Title</title>
+    <link th:href="@{/main.css}" rel="stylesheet"/>
 </head>
 <body>
-<!--<h1>th:text="'My friend ' + ${personForm.name} + ' is ' + ${personForm.age} + ' years old'"</h1>-->
-<!--<h1> th:text="'My friend ' + ${CustomerStatus.value} + ' is ' + ' years old'"</h1>-->
 
-<p th:text="'Hello, ' + ${status} + '!'" />
+<p th:text="'Hello, ' + ${status[0].getCompleteName()} + '!'" />
 
 </body>
 </html>

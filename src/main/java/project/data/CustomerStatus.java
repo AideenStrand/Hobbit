@@ -4,13 +4,14 @@ import lombok.Data;
 
 @Data
 public class CustomerStatus {
-  private String value;
 
-  public String getValue() {
-    return value;
-  }
+    private String value;
 
-  public void setValue(String value) {
-    this.value = value;
-  }
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 }
