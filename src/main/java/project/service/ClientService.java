@@ -41,7 +41,7 @@ public class ClientService implements TimeRegister {
                 costumerInformation = new CostumerInformation.MyBuilder()
                         .name(name.getKey().toString())
                         .family(name.getValue().toString())
-                        .personalId(petstore.stream().map(c -> c.getId()).findFirst().orElse(null))
+                        .personalId(petstore.stream().map(c -> c.getId()).findFirst().orElse("9222968140491051141"))
                         .myBuild();
                 responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
                 responseJson.setCostumerInformation(costumerInformation);
