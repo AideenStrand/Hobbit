@@ -24,8 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9f4a0626-cc63-4e0d-b860-931f6d61f7cc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/api/WebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/api/WebController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/StatusForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/StatusForm.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,7 +80,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bootstrap" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
