@@ -94,12 +94,13 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aidstr\Desktop\project\aideenproject\Hobbit\src\main\resources\static" />
+      <recent name="C:\Users\aidstr\Desktop\project\aideenproject\Hobbit\src\main\resources\templates" />
+      <recent name="C:\Users\aidstr\Desktop\aideenproject\Hobbit" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\aidstr\Desktop\aideenproject\Hobbit\src" />
-      <recent name="C:\Users\as945197\project\aideen\src\main\java\project\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="project.config" />
@@ -108,9 +109,9 @@
       <recent name="project.api" />
       <recent name="project.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aidstr\Desktop\project\aideenproject\Hobbit\src\main\resources\templates" />
-      <recent name="C:\Users\aidstr\Desktop\aideenproject\Hobbit" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aidstr\Desktop\aideenproject\Hobbit\src" />
+      <recent name="C:\Users\as945197\project\aideen\src\main\java\project\config" />
     </key>
   </component>
   <component name="RunDashboard">

@@ -9,9 +9,9 @@
 
 <body>
 <!--<p th:text="${customerList[0].getCostumerInformation().getFamily()}" />-->
-<h2 class="centerDiv">List of availabel Customers</h2>
-<div th:if="${not #lists.isEmpty(customerList)}" >
-    <table class="center">
+<h2 class="container p-3 my-3 bg-primary text-white" >List of availabel Customers</h2>
+<div class="container-fluid" th:if="${not #lists.isEmpty(customerList)}" >
+    <table class="centerResult">
         <tr>
             <th>Id</th>
             <th>Name</th>
