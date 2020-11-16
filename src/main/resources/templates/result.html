@@ -9,10 +9,13 @@
 
 <body>
 <!--<p th:text="${customerList[0].getCostumerInformation().getFamily()}" />-->
-<h2 class="container p-3 my-3 bg-primary text-white" >List of availabel Customers</h2>
+<div  class="container p-3 my-3 bg-dark text-white" >
+    <h1 style="color:#FFA500">List of availabel Customers</h1>
+    <p style="color:#cf4e1b">There is list of all available customers </p>
+</div>
 <div class="container-fluid" th:if="${not #lists.isEmpty(customerList)}" >
     <table class="centerResult">
-        <tr>
+        <tr style="color:#cf4e1b">
             <th>Id</th>
             <th>Name</th>
             <th>Family</th>
@@ -25,6 +28,14 @@
             <td th:text="${customer.getCostumerInformation().getPersonalId()}"></td>
         </tr>
     </table>
+
+
+    <div class="center">
+    <p ><input class="button5" type="submit" value="Edit"/></p>
+        <p ><input class="button5" type="submit" value="Approve"/></p>
+        <p ><input class="button5" type="submit" value="Delete"/></p>
+</div>
+
 </div>
 </body>
 

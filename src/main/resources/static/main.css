@@ -64,6 +64,7 @@ table, th, td {
   margin-left: 50px;
  border-spacing: 10px;
     border-collapse: separate;
+     font-weight: bold;
 
 }
 
@@ -71,6 +72,18 @@ table, th, td {
 .colour-6 {
   background-color:  #917C78;
 }
+
+.center{
+  width: 40%;
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  margin-top: -10px;
+  margin-left: -150px;
+  text-align: center;
+  font-size: 20px;
+}
+
 
 .circle{
   border-radius: 50%;
