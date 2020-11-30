@@ -49,6 +49,8 @@ public class ClinetController {
         return "publish successfully";
     }
 
+    @PostMapping
+
     @PatchMapping(value = "/api/modifyInfo", consumes = "application/json-patch+json")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<String> getpatch(

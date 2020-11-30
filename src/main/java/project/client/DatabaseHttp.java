@@ -6,9 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 @Slf4j
 @Service
@@ -22,6 +20,13 @@ public class DatabaseHttp {
         String username = "foo";
         String password = "bar";
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname", username, password);
+        Statement statement = connection.createStatement();
+        String sql = "select * from student";
+        ResultSet set = statement.executeQuery(sql);
+        while (set.next()){
+            System.out.println(set);
+            connection.close();
+        }
         return objectResponseEntity.getBody();
     }
 }
