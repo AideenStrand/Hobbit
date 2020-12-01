@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import project.data.OrderRequest;
+import project.data.Petstore;
+import project.data.ResponseJson;
 
 import java.util.List;
 
@@ -27,34 +29,20 @@ public class ClientServiceHttp {
 
     private final static String STATUS = "status";
 
-    public <T> List<T> makeRequest(String status, ParameterizedTypeReference<List<T>> responseType) {
-        ResponseEntity<List<T>> response;
+    public List<Petstore> makeRequest(String status) {
+
+        ResponseEntity<List<Petstore>> response;
         try {
             response = restTemplate.exchange(
                     petstoreUrl + "?"
                             + STATUS + "=" + status,
                     HttpMethod.GET,
                     null,
-                    responseType);
+                    new ParameterizedTypeReference<List<Petstore>>() {
+                    });
         } catch (RestClientException e) {
             throw new RestClientException("error happend calling endpoint");
         }
         return response.getBody();
-    }
-
-    public OrderRequest registerOrder(OrderRequest request) {
-        ResponseEntity<OrderRequest> responseEntity;
-
-        HttpEntity httpEntity = new HttpEntity(request);
-
-        try {
-           responseEntity = restTemplate.exchange("https://petstore.swagger.io/v2/store/order",
-                    HttpMethod.POST,
-                   httpEntity,
-                    OrderRequest.class);
-        }catch (RestClientException e){
-            throw new RestClientException("error happend store order");
-        }
-        return responseEntity.getBody();
     }
 }

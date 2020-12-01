@@ -2,11 +2,10 @@ package project.data;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Getter
 @Setter
-/*@Data*/
 @ToString
 @NoArgsConstructor
 public class OrderRequest {
@@ -17,7 +16,7 @@ public class OrderRequest {
     @JsonProperty("quantity")
     private Integer quantity;
     @JsonProperty("shipDate")
-    private LocalDate shipDate;
+    private Date shipDate;
     @JsonProperty("status")
     private String status;
     @JsonProperty("complete")
@@ -35,7 +34,7 @@ public class OrderRequest {
         return quantity;
     }
 
-    public LocalDate getShipDate() {
+    public Date getShipDate() {
         return shipDate;
     }
 
@@ -59,7 +58,7 @@ public class OrderRequest {
         this.quantity = quantity;
     }
 
-    public void setShipDate(LocalDate shipDate) {
+    public void setShipDate(Date shipDate) {
         this.shipDate = shipDate;
     }
 
@@ -71,14 +70,3 @@ public class OrderRequest {
         this.complete = complete;
     }
 }
-
-/*
-{
-        "id": 0,
-        "petId": 664,
-        "quantity": 0,
-        "shipDate": "2020-12-01T10:28:57.391Z",
-        "status": "placed",
-        "complete": true
-        }
-*/

@@ -51,3 +51,5 @@ remedy:
 client:
   petstore:
     url: https://petstore.swagger.io/v2/pet/findByStatus
+  order:
+    url: https://petstore.swagger.io/v2/store/order

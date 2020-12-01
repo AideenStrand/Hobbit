@@ -50,28 +50,6 @@ public class ClinetController {
         return "publish successfully";
     }
 
-
-    //todo post map
-    @PostMapping(value ="/api/order")
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<OrderRequest> registerOrder(@RequestBody OrderRequest orderRequest)
-    {
-     try {
-         return new ResponseEntity<OrderRequest>(clientService.storeOrder(orderRequest), HttpStatus.OK);
-     }catch (Exception e){
-        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-     }
-
-    }
-
-
-
-
-
-
-
-
-
     @PatchMapping(value = "/api/modifyInfo", consumes = "application/json-patch+json")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<String> getpatch(
@@ -89,6 +67,16 @@ public class ClinetController {
     public ResponseEntity<Object> getDataFromdatabase() {
         try {
             return new ResponseEntity<>(clientService.getData(), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping(value = "/api/order")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<OrderRequest> registerOrder(@RequestBody OrderRequest orderRequest) {
+        try {
+            return new ResponseEntity<OrderRequest>(clientService.storeOrder(orderRequest), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

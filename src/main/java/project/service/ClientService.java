@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import project.client.OrderServiceHttp;
 import project.client.ClientServiceHttp;
 import project.client.DatabaseHttp;
 import project.data.*;
@@ -22,15 +23,17 @@ public class ClientService implements TimeRegister {
     private ClientServiceHttp clientServiceHttp;
 
     @Autowired
+    private OrderServiceHttp orderServiceHttp;
+
+    @Autowired
     private DatabaseHttp databaseHttp;
 
     private final static String BIRTHDATE = "12/03/1980";
 
     public List<ResponseJson> getAip(String status) {
         List<ResponseJson> responseJsonList = new LinkedList<>();
-        List<Petstore> petstore = clientServiceHttp.makeRequest(status,
-                new ParameterizedTypeReference<List<Petstore>>() {
-                });
+        List<Petstore> petstore = clientServiceHttp.makeRequest(status);
+
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation = null;
         if (fixBirthDate(BIRTHDATE)) {
@@ -83,7 +86,10 @@ public class ClientService implements TimeRegister {
     }
 
     public OrderRequest storeOrder(OrderRequest request) {
-        OrderRequest response = clientServiceHttp.registerOrder(request);
-        return  response;
+/*        if(request.getId().equals(null)){
+            clientServiceHttp.makeRequest("available");
+        }*/
+        ResponseEntity<OrderRequest> response = orderServiceHttp.registerOrder(request, OrderRequest.class);
+        return  response.getBody();
     }
 }
