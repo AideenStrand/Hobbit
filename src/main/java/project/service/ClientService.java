@@ -4,13 +4,11 @@ import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import project.client.ClientServiceHttp;
 import project.client.DatabaseHttp;
-import project.data.CostumerInformation;
-import project.data.Petstore;
-import project.data.ResponseJson;
-import project.data.TimeRegister;
+import project.data.*;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -82,5 +80,10 @@ public class ClientService implements TimeRegister {
         Map<String, String> pathUrl = new HashMap<>();
         return pathUrl;
 
+    }
+
+    public OrderRequest storeOrder(OrderRequest request) {
+        OrderRequest response = clientServiceHttp.registerOrder(request);
+        return  response;
     }
 }

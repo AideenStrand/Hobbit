@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import project.data.OrderRequest;
 import project.data.ResponseJson;
 import project.service.ClientService;
 
@@ -49,7 +50,27 @@ public class ClinetController {
         return "publish successfully";
     }
 
-    @PostMapping
+
+    //todo post map
+    @PostMapping(value ="/api/order")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<OrderRequest> registerOrder(@RequestBody OrderRequest orderRequest)
+    {
+     try {
+         return new ResponseEntity<OrderRequest>(clientService.storeOrder(orderRequest), HttpStatus.OK);
+     }catch (Exception e){
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+     }
+
+    }
+
+
+
+
+
+
+
+
 
     @PatchMapping(value = "/api/modifyInfo", consumes = "application/json-patch+json")
     @ResponseStatus(HttpStatus.OK)
