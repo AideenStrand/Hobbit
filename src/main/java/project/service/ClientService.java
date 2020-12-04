@@ -76,16 +76,6 @@ public class ClientService implements TimeRegister {
         return true;
     }
 
-    public String modifyInfo(JsonPatch jsonPatch) {
-        return null;
-    }
-
-    public Map<String, String> ValidateUrl() {
-        Map<String, String> pathUrl = new HashMap<>();
-        return pathUrl;
-
-    }
-
     public OrderRequest storeOrder(OrderRequest orderRequest) {
         List<Petstore> petStoreList = clientServiceHttp.makeRequest(AVAILABLE);
         OrderRequest request = petStoreList.stream()
@@ -103,4 +93,13 @@ public class ClientService implements TimeRegister {
         return request;
     }
 
+    public String modifyInfo(JsonPatch jsonPatch) {
+        return null;
+    }
+
+    public Map<String, String> ValidateUrl() {
+        Map<String, String> pathUrl = new HashMap<>();
+        return pathUrl;
+
+    }
 }

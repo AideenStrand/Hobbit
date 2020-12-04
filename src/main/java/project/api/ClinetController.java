@@ -50,18 +50,6 @@ public class ClinetController {
         return "publish successfully";
     }
 
-    @PatchMapping(value = "/api/modifyInfo", consumes = "application/json-patch+json")
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> getpatch(
-            @RequestBody JsonPatch jsonPatch) {
-        try {
-            System.out.println("");
-            return new ResponseEntity<String>(clientService.modifyInfo(jsonPatch), HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
     @GetMapping(value = "/api/database")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Object> getDataFromdatabase() {
@@ -77,6 +65,18 @@ public class ClinetController {
     public ResponseEntity<OrderRequest> registerOrder(@RequestBody OrderRequest orderRequest) {
         try {
             return new ResponseEntity<OrderRequest>(clientService.storeOrder(orderRequest), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PatchMapping(value = "/api/modifyInfo", consumes = "application/json-patch+json")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<String> getpatch(
+            @RequestBody JsonPatch jsonPatch) {
+        try {
+            System.out.println("");
+            return new ResponseEntity<String>(clientService.modifyInfo(jsonPatch), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
