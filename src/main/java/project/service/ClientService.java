@@ -5,9 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import project.client.OrderServiceHttp;
 import project.client.ClientServiceHttp;
 import project.client.DatabaseHttp;
+import project.client.OrderServiceHttp;
 import project.data.*;
 
 import java.sql.SQLException;
@@ -28,20 +28,22 @@ public class ClientService implements TimeRegister {
     private DatabaseHttp databaseHttp;
 
     private final static String BIRTHDATE = "12/03/1980";
+    private final static String ZERO = "0";
+    private final static String AVAILABLE = "available";
 
     public List<ResponseJson> getAip(String status) {
         List<ResponseJson> responseJsonList = new LinkedList<>();
         List<Petstore> petstore = clientServiceHttp.makeRequest(status);
-
         HashMap<String, String> customerName = nameFamilyMaker();
-        CostumerInformation costumerInformation = null;
+        CostumerInformation costumerInformation;
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
                 costumerInformation = new CostumerInformation.MyBuilder()
                         .name(name.getKey().toString())
                         .family(name.getValue().toString())
-                        .personalId(petstore.stream().map(c -> c.getId()).findFirst().orElse("9222968140491051141"))
+                        .personalId(petstore.stream().map(c -> c.getId())
+                                .findFirst().orElse("9222968140491051141"))
                         .myBuild();
                 responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
                 responseJson.setCostumerInformation(costumerInformation);
@@ -84,16 +86,21 @@ public class ClientService implements TimeRegister {
 
     }
 
-    public OrderRequest storeOrder(OrderRequest request) {
-        List<Petstore> petstoreList = clientServiceHttp.makeRequest("available");
-        request.setPetId(petstoreList.stream()
-                .filter(Objects::nonNull)
-                .filter(pet -> pet.getCategory() != null && pet.getCategory().getId() != null)
-                .map(petstore -> petstore.getCategory().getId())
-                .findFirst()
-                .orElse(""));
-
+    public OrderRequest storeOrder(OrderRequest orderRequest) {
+        List<Petstore> petStoreList = clientServiceHttp.makeRequest(AVAILABLE);
+        OrderRequest request = petStoreList.stream()
+                .filter(petStore -> petStore.getCategory() != null && petStore.getCategory().getId() != null &&
+                        !ZERO.equals(petStore.getCategory().getId()))
+                .map(petStore -> mapRequest(petStore, orderRequest)).findFirst().orElse(null);
         ResponseEntity<OrderRequest> response = orderServiceHttp.registerOrder(request, OrderRequest.class);
         return response.getBody();
+
     }
+
+    private OrderRequest mapRequest(Petstore petStore, OrderRequest request) {
+        request.setPetId(petStore.getCategory().getId());
+        request.setStatus(petStore.getStatus());
+        return request;
+    }
+
 }
