@@ -3,7 +3,6 @@ package project.service;
 import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import project.client.OrderServiceHttp;
@@ -86,10 +85,15 @@ public class ClientService implements TimeRegister {
     }
 
     public OrderRequest storeOrder(OrderRequest request) {
-/*        if(request.getId().equals(null)){
-            clientServiceHttp.makeRequest("available");
-        }*/
+        List<Petstore> petstoreList = clientServiceHttp.makeRequest("available");
+        request.setPetId(petstoreList.stream()
+                .filter(Objects::nonNull)
+                .filter(pet -> pet.getCategory() != null && pet.getCategory().getId() != null)
+                .map(petstore -> petstore.getCategory().getId())
+                .findFirst()
+                .orElse(""));
+
         ResponseEntity<OrderRequest> response = orderServiceHttp.registerOrder(request, OrderRequest.class);
-        return  response.getBody();
+        return response.getBody();
     }
 }

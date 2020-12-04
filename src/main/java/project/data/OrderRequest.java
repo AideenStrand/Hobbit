@@ -12,7 +12,7 @@ public class OrderRequest {
     @JsonProperty("id")
     private Long id;
     @JsonProperty("petId")
-    private Integer petId;
+    private String petId;
     @JsonProperty("quantity")
     private Integer quantity;
     @JsonProperty("shipDate")
@@ -26,7 +26,7 @@ public class OrderRequest {
         return id;
     }
 
-    public Integer getPetId() {
+    public String getPetId() {
         return petId;
     }
 
@@ -50,7 +50,7 @@ public class OrderRequest {
         this.id = id;
     }
 
-    public void setPetId(Integer petId) {
+    public void setPetId(String petId) {
         this.petId = petId;
     }
 
