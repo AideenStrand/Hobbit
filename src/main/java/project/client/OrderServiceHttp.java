@@ -23,15 +23,13 @@ public class OrderServiceHttp {
 
     public <T> ResponseEntity<T> registerOrder(OrderRequest request, Class<T> clazz) {
         ResponseEntity<T> responseEntity;
-
         HttpEntity httpEntity = new HttpEntity(request);
-
         try {
             responseEntity = restTemplate.exchange(orderUrl,
                     HttpMethod.POST,
                     httpEntity,
-                     clazz);
-        }catch (RestClientException e){
+                    clazz);
+        } catch (RestClientException e) {
             throw new RestClientException("error happend store order");
         }
         return responseEntity;

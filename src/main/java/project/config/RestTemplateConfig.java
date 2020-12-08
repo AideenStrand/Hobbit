@@ -13,9 +13,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
-import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
-import javax.servlet.ServletContext;
 import java.util.Arrays;
 
 @Configuration
@@ -38,7 +36,6 @@ public class RestTemplateConfig {
         return restTemplate;
     }
 
-
     @Bean
     public ClassLoaderTemplateResolver secondaryTemplateResolver() {
         ClassLoaderTemplateResolver secondaryTemplateResolver = new ClassLoaderTemplateResolver();
@@ -48,7 +45,6 @@ public class RestTemplateConfig {
         secondaryTemplateResolver.setCharacterEncoding("UTF-8");
         secondaryTemplateResolver.setOrder(1);
         secondaryTemplateResolver.setCheckExistence(true);
-
         return secondaryTemplateResolver;
     }
 }

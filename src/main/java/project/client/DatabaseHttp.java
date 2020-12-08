@@ -23,7 +23,7 @@ public class DatabaseHttp {
         Statement statement = connection.createStatement();
         String sql = "select * from student";
         ResultSet set = statement.executeQuery(sql);
-        while (set.next()){
+        while (set.next()) {
             System.out.println(set);
             connection.close();
         }

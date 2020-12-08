@@ -18,13 +18,13 @@ public class WebController {
     private ClientService clientService;
 
     @GetMapping("/customer")
-    public String getStatus(Model model){
+    public String getStatus(Model model) {
         model.addAttribute("status", new CustomerStatus());
         return "StatusForm";
     }
 
     @PostMapping("/customer")
-    public String showCustomersInfo(@ModelAttribute CustomerStatus status, Model model){
+    public String showCustomersInfo(@ModelAttribute CustomerStatus status, Model model) {
         model.addAttribute("customerList", clientService.getAip(status.getValue()));
         return "result";
     }
