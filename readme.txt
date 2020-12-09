@@ -1,5 +1,8 @@
 api test :
 
-localhost:8081/api/client/available
+Backend:
+localhost:8080/api/client/available
+localhost:8080/api/order
 
-test
+Frontend:
+http://localhost:8080/customer

@@ -8,27 +8,24 @@
 </head>
 <body>
 
-
 <div class="container p-3 my-3 bg-dark text-white">
     <h1 style="color:#FFA500">Hobbit Customer Site</h1>
     <p style="color:#cf4e1b">This costomer site created for search and edit datas.</p>
 </div>
 
-<div class="container" >
-    <img src="/hobbit.jpg" style="float:right" class="circle"  alt="Cinque Terre" width="304" height="236">
+<div class="container">
+    <img src="/hobbit.jpg" style="float:right" class="circle" alt="Cinque Terre" width="304" height="236">
 </div>
-        <div class="centerStatus" style="background-color">
-            <h2  style="color:#FFA500">
-                Choose which customer list you search:
-            </h2>
-            <form th:action="@{/customer}" th:object="${status}" method="post">
-                <p style="color:#cf4e1b">Name: <input type="text" th:field="*{value}"/></p>
-                <p><input class="button5" type="submit" value="Submit"/></p>
-            </form>
-        </div>
-
+<div class="centerStatus" style="background-color">
+    <h2 style="color:#FFA500">
+        Choose which customer list you search:
+    </h2>
+    <form th:action="@{/customer}" th:object="${status}" method="post">
+        <p style="color:#cf4e1b">Name: <input type="text" th:field="*{value}"/></p>
+        <p><input class="button5" type="submit" value="Submit"/></p>
+    </form>
 </div>
 
-
+</div>
 </body>
 </html>

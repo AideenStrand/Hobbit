@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Title</title>
     <link th:href="@{/bootstrap.css}" rel="stylesheet"/>
     <link th:href="@{/main.css}" rel="stylesheet"/>
@@ -9,11 +9,11 @@
 
 <body>
 <!--<p th:text="${customerList[0].getCostumerInformation().getFamily()}" />-->
-<div  class="container p-3 my-3 bg-dark text-white" >
+<div class="container p-3 my-3 bg-dark text-white">
     <h1 style="color:#FFA500">List of availabel Customers</h1>
     <p style="color:#cf4e1b">There is list of all available customers </p>
 </div>
-<div class="container-fluid" th:if="${not #lists.isEmpty(customerList)}" >
+<div class="container-fluid" th:if="${not #lists.isEmpty(customerList)}">
     <table class="centerResult">
         <tr style="color:#cf4e1b">
             <th>Id</th>
@@ -29,12 +29,11 @@
         </tr>
     </table>
 
-
     <div class="center">
-    <p ><input class="button5" type="submit" value="Edit"/></p>
-        <p ><input class="button5" type="submit" value="Approve"/></p>
-        <p ><input class="button5" type="submit" value="Delete"/></p>
-</div>
+        <p><input class="button5" type="submit" value="Edit"/></p>
+        <p><input class="button5" type="submit" value="Approve"/></p>
+        <p><input class="button5" type="submit" value="Delete"/></p>
+    </div>
 
 </div>
 </body>
