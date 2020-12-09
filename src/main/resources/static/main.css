@@ -85,6 +85,14 @@ table, th, td {
 }
 
 
+.musicDiv{
+  width: 40%;
+  position: fixed;
+  top: 70%;
+  left: 18%;
+}
+
+
 .circle{
   border-radius: 50%;
 }
