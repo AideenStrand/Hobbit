@@ -25,7 +25,7 @@ public class WebController {
 
     @PostMapping("/customer")
     public String showCustomersInfo(@ModelAttribute CustomerStatus status, Model model) {
-        model.addAttribute("customerList", clientService.getAip(status.getValue()));
+        model.addAttribute("customerList", clientService.getCustomers(status.getValue()));
         return "result";
     }
 }

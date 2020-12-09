@@ -24,6 +24,7 @@ public class DatabaseHttp {
         String sql = "select * from student";
         ResultSet set = statement.executeQuery(sql);
         while (set.next()) {
+            //todo*******
             System.out.println(set);
             connection.close();
         }

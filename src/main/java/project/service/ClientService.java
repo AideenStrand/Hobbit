@@ -30,12 +30,15 @@ public class ClientService implements TimeRegister {
     private final static String BIRTHDATE = "12/03/1980";
     private final static String ZERO = "0";
     private final static String AVAILABLE = "available";
+    private final static String CONSTANT_NUMBER = "9222968140491051141";
 
-    public List<ResponseJson> getAip(String status) {
-        List<ResponseJson> responseJsonList = new LinkedList<>();
+    public List<ResponseJson> getCustomers(String status) {
+
         List<Petstore> petstore = clientServiceHttp.makeRequest(status);
+        List<ResponseJson> responseJsonList = new LinkedList<>();
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation;
+
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
@@ -43,8 +46,9 @@ public class ClientService implements TimeRegister {
                         .name(name.getKey().toString())
                         .family(name.getValue().toString())
                         .personalId(petstore.stream().map(c -> c.getId())
-                                .findFirst().orElse("9222968140491051141"))
+                                .findFirst().orElse(CONSTANT_NUMBER))
                         .myBuild();
+
                 responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
                 responseJson.setCostumerInformation(costumerInformation);
                 responseJsonList.add(responseJson);
@@ -81,7 +85,9 @@ public class ClientService implements TimeRegister {
         OrderRequest request = petStoreList.stream()
                 .filter(petStore -> petStore.getCategory() != null && petStore.getCategory().getId() != null &&
                         !ZERO.equals(petStore.getCategory().getId()))
-                .map(petStore -> mapRequest(petStore, orderRequest)).findFirst().orElse(null);
+                .map(petStore -> mapRequest(petStore, orderRequest))
+                .findFirst().orElse(null);
+
         ResponseEntity<OrderRequest> response = orderServiceHttp.registerOrder(request, OrderRequest.class);
         return response.getBody();
 
