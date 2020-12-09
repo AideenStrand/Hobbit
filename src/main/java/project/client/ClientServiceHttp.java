@@ -25,7 +25,7 @@ public class ClientServiceHttp {
 
     private final static String STATUS = "status";
 
-    public List<Petstore> makeRequest(String status) {
+    public List<Petstore> fetchCustomers(String status) {
         ResponseEntity<List<Petstore>> response;
         try {
             response = restTemplate.exchange(

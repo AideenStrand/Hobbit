@@ -33,8 +33,12 @@ public class ClientService implements TimeRegister {
     private final static String CONSTANT_NUMBER = "9222968140491051141";
 
     public List<ResponseJson> getCustomers(String status) {
+        List<Petstore> petstore = null;
 
-        List<Petstore> petstore = clientServiceHttp.makeRequest(status);
+        if(status != null || AVAILABLE.equals(status)){
+          petstore = clientServiceHttp.fetchCustomers(status);
+        }
+
         List<ResponseJson> responseJsonList = new LinkedList<>();
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation;
@@ -81,7 +85,7 @@ public class ClientService implements TimeRegister {
     }
 
     public OrderRequest storeOrder(OrderRequest orderRequest) {
-        List<Petstore> petStoreList = clientServiceHttp.makeRequest(AVAILABLE);
+        List<Petstore> petStoreList = clientServiceHttp.fetchCustomers(AVAILABLE);
         OrderRequest request = petStoreList.stream()
                 .filter(petStore -> petStore.getCategory() != null && petStore.getCategory().getId() != null &&
                         !ZERO.equals(petStore.getCategory().getId()))
