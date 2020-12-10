@@ -1,0 +1,114 @@
+body {
+  background-color: #FAEBD7;
+}
+
+.centerStatus {
+  width: 40%;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  margin-top: -10px;
+  margin-left: -150px;
+  text-align: center;
+  background-color:  #330000;
+
+}
+
+.musicDiv{
+  width: 40%;
+  position: fixed;
+  top: 55%;
+  left: 30%;
+  margin-top: -10px;
+  margin-left: -150px;
+}
+
+
+.centerResult {
+  width: 40%;
+  border: 5px solid #696969;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  margin-top: -10px;
+  margin-left: -50px;
+  text-align: center;
+
+}
+
+.button5 {
+border-radius: 50%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  background-color: #FFA500;
+
+}
+
+.centerDiv {
+  width: 40%;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  margin-top: -10px;
+  margin-left: -40px;
+  text-align: center;
+
+}
+
+.centerTable{
+  top: 30%;
+  left: 30%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  top: 30%;
+    left: 30%;
+  margin-top: 50px;
+  margin-left: 50px;
+ border-spacing: 10px;
+    border-collapse: separate;
+     font-weight: bold;
+
+}
+
+
+.colour-6 {
+  background-color:  #917C78;
+}
+
+.center{
+  width: 40%;
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  margin-top: -10px;
+  margin-left: -150px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+.circle{
+  border-radius: 50%;
+}
+/*
+h2 {
+  text-align: center;
+}
+*/
+
+strong {
+    font-weight: 700;
+    background-color: yellow;
+}
+
+p {
+    font-family: sans-serif;
+}
