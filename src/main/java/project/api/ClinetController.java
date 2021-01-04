@@ -29,7 +29,6 @@ public class ClinetController {
     @GetMapping(value = "/api/client/{status}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<List<ResponseJson>> getAvailabelCustomers(
-            @NotBlank @RequestHeader(name = "secret") String secret,
             @NotBlank @PathVariable(name = "status") String status) {
         try {
             return new ResponseEntity<>(clientService.getCustomers(status), HttpStatus.OK);

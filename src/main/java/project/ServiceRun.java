@@ -5,5 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ServiceRun {
-    public static void  main(String[] args){ SpringApplication.run(ServiceRun.class, args); }
+    public static void  main(String[] args) {
+        SpringApplication.run(ServiceRun.class, args); }
 }
