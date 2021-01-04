@@ -4,18 +4,14 @@ import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import project.data.OrderRequest;
 import project.data.ResponseJson;
 import project.service.ClientService;
 
 import javax.validation.constraints.NotBlank;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PATCH;
 import java.util.List;
 
 @Slf4j
