@@ -35,9 +35,7 @@ public class ClientService implements TimeRegister {
     public List<ResponseJson> getCustomers(String status) {
         List<Petstore> petstore = null;
 
-        if(status != null || AVAILABLE.equals(status)){
           petstore = clientServiceHttp.fetchCustomers(status);
-        }
 
         List<ResponseJson> responseJsonList = new LinkedList<>();
         HashMap<String, String> customerName = nameFamilyMaker();

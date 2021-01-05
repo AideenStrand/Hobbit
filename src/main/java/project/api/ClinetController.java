@@ -26,12 +26,11 @@ public class ClinetController {
 
     private static final String TOPIC = "KAFKA_EXEMPEL";
 
-    @GetMapping(value = "/api/client/{status}")
+    @GetMapping(value = "/api/client")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<List<ResponseJson>> getAvailabelCustomers(
-            @NotBlank @PathVariable(name = "status") String status) {
+    public ResponseEntity<List<ResponseJson>> getAvailabelCustomers() {
         try {
-            return new ResponseEntity<>(clientService.getCustomers(status), HttpStatus.OK);
+            return new ResponseEntity<>(clientService.getCustomers(null), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
