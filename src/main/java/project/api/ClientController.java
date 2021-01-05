@@ -16,7 +16,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-public class ClinetController {
+public class ClientController {
 
     @Autowired
     private ClientService clientService;
