@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
@@ -15,10 +17,10 @@ import project.client.ClientServiceHttp;
 import project.data.CostumerInformation;
 import project.data.Petstore;
 import project.data.ResponseJson;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 
@@ -39,12 +41,12 @@ public class ClientServiceTest {
     ClientServiceHttp clientServiceHttp;
 
     @Value("${server.port}")
-    private  String port;
-
+    private String port;
 
     private final static String LOCAT_HOST = "http://localhost:";
     private final static String Available_Customer_URL = "/api/client/";
     private String AVAILABLE = "available";
+    private String ID = "id";
 
     @Test
     public void CustomerAvailableTest() {
@@ -59,33 +61,30 @@ public class ClientServiceTest {
         List<Petstore> petstoreList = new ArrayList<>();
         Petstore petstore = new Petstore();
         petstore.setName("name");
-        petstore.setId("id");
+        petstore.setId(ID);
         petstoreList.add(petstore);
-
-        when(clientServiceHttp.fetchCustomers(null))
+        when(clientServiceHttp.fetchCustomers("available"))
                 .thenReturn(Collections.singletonList(petstore));
+        ResponseEntity<List<ResponseJson>> responseEntity = clientController.getAvailabelCustomers(AVAILABLE);
 
-        clientController.getAvailabelCustomers(AVAILABLE);
-
-        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(LOCAT_HOST
-                        + port + Available_Customer_URL + AVAILABLE,
-                Object[].class);
-
+       /* ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(LOCAT_HOST
+                        + "8081" + Available_Customer_URL + AVAILABLE,
+                Object[].class);*/
         Assert.assertEquals(200, responseEntity.getStatusCodeValue());
         Assert.assertNotNull(responseEntity.getBody());
+        Assert.assertEquals(Optional.of(ID), responseEntity.getBody()
+                .stream().map(i -> i.getCostumerInformation().getPersonalId()).findFirst());
 
     }
 
-   /* public <T> ResponseEntity<T> getForEntityRest(String url){
-
+    //TODO
+    public <T> ResponseEntity<T> getForEntityRest(String url) {
         ResponseEntity<ResponseJson> responseEntity;
-
         responseEntity = restTemplate.exchange(url,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<ResponseJson>() {
                 });
-
-        return responseEntity.getBody();*/
-    //}
+        return null; //responseEntity.getBody();
+    }
 }
