@@ -42,7 +42,7 @@ opentracing:
   jaeger:
     log-spans: true
 server:
-  port: 8082
+  port: 8081
 remedy:
   username:
     secret: web

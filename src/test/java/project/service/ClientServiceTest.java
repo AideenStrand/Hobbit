@@ -1,115 +1,91 @@
 package project.service;
 
-import com.sun.research.ws.wadl.Application;
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.client.RestTemplate;
-import project.ServiceRun;
 import project.api.ClientController;
 import project.client.ClientServiceHttp;
-import project.config.RestTemplateConfig;
 import project.data.CostumerInformation;
 import project.data.Petstore;
 import project.data.ResponseJson;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-/*@AutoConfigureMockMvc*/
-/*@WebMvcTest(ClientController.class)
-@ContextConfiguration(classes= {ServiceRun.class, RestTemplateConfig.class} )*/
-
 public class ClientServiceTest {
 
-/*    @MockBean
-    private ClientServiceHttp clientServiceHttp;
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Autowired
-    private RestTemplate restTemplate;*/
-
-/*    @MockBean
-    private ClientService clientService;*/
-
-/*    @InjectMocks
-    ClientController clinetController;*/
+    private ClientController clientController;
 
     @Autowired
-    private MockMvc mockMvc;
+    ClientService clientService;
+
+    @MockBean
+    ClientServiceHttp clientServiceHttp;
 
     @Value("${server.port}")
-    private String port;
+    private  String port;
 
-    private final static String STATUS = "availabel";
 
-    private final static String baseUrl = "http://localhost:";
-
-    @LocalServerPort
-    int randomServerPort;
+    private final static String LOCAT_HOST = "http://localhost:";
+    private final static String Available_Customer_URL = "/api/client/";
+    private String AVAILABLE = "available";
 
     @Test
-    public void getCustomersTest() throws Exception {
+    public void CustomerAvailableTest() {
         List<ResponseJson> responseJsonList = new ArrayList<>();
         ResponseJson responseJson = new ResponseJson();
         CostumerInformation costumerInformation = new CostumerInformation.MyBuilder()
                 .name("name")
                 .family("family")
                 .personalId("123").myBuild();
-
         responseJson.setCostumerInformation(costumerInformation);
         responseJsonList.add(responseJson);
-
-
         List<Petstore> petstoreList = new ArrayList<>();
+        Petstore petstore = new Petstore();
+        petstore.setName("name");
+        petstore.setId("id");
+        petstoreList.add(petstore);
 
-        String url = baseUrl + "8082" + "/api/client";
+        when(clientServiceHttp.fetchCustomers(null))
+                .thenReturn(Collections.singletonList(petstore));
 
-/*                when(clientServiceHttp.fetchCustomers("available"))
-                .thenReturn(petstoreList);*/
+        clientController.getAvailabelCustomers(AVAILABLE);
 
-/*        when(clientService.getCustomers(null))
-                .thenReturn(responseJsonList);*/
+        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(LOCAT_HOST
+                        + port + Available_Customer_URL + AVAILABLE,
+                Object[].class);
 
-                MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/client")
-                        .accept(MediaType.APPLICATION_JSON)).andReturn();
-
-     /*      ResponseEntity<String> responseEntity = restTemplate.getForEntity(url,
-                String.class);  */
-
-/*           ResponseEntity<List<ResponseJson>> responseEntity = clinetController.getAvailabelCustomers();*/
-
-/*        ResponseEntity<List<ResponseJson>> responseEntity = getMethods(url);*/
-
-/*        Assert.assertEquals(200, responseEntity.getStatusCodeValue());*/
+        Assert.assertEquals(200, responseEntity.getStatusCodeValue());
+        Assert.assertNotNull(responseEntity.getBody());
 
     }
-/*
-    public ResponseEntity<List<ResponseJson>> getMethods(String url){
-        ResponseEntity<List<ResponseJson>> responseJsonList = restTemplate.exchange(url,
+
+   /* public <T> ResponseEntity<T> getForEntityRest(String url){
+
+        ResponseEntity<ResponseJson> responseEntity;
+
+        responseEntity = restTemplate.exchange(url,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<ResponseJson>>() {
-        });
-        return responseJsonList;
-    }*/
+                new ParameterizedTypeReference<ResponseJson>() {
+                });
 
+        return responseEntity.getBody();*/
+    //}
 }
-
-

@@ -26,11 +26,13 @@ public class ClientController {
 
     private static final String TOPIC = "KAFKA_EXEMPEL";
 
-    @GetMapping(value = "/api/client")
+    @GetMapping(value = "/api/client/{status}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<List<ResponseJson>> getAvailabelCustomers() {
+    public ResponseEntity<List<ResponseJson>> getAvailabelCustomers(
+            @NotBlank @PathVariable(name = "status") String status
+    ) {
         try {
-            return new ResponseEntity<>(clientService.getCustomers(null), HttpStatus.OK);
+            return new ResponseEntity<>(clientService.getCustomers(status), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
