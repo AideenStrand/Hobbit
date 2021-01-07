@@ -32,10 +32,10 @@ import java.util.List;
 
 
 @RunWith(SpringRunner.class)
-/*@SpringBootTest*/
+@SpringBootTest
 /*@AutoConfigureMockMvc*/
-@WebMvcTest(ClientController.class)
-@ContextConfiguration(classes= {ServiceRun.class, RestTemplateConfig.class} )
+/*@WebMvcTest(ClientController.class)
+@ContextConfiguration(classes= {ServiceRun.class, RestTemplateConfig.class} )*/
 
 public class ClientServiceTest {
 
@@ -63,14 +63,6 @@ public class ClientServiceTest {
 
     @LocalServerPort
     int randomServerPort;
-
-/*    @Before
-    public void setUp() throws Exception {
-*//*        this.base = new URL("http://localhost:" + port + "/rest/customers");
-        template = new TestRestTemplate();*//*
-    }*/
-
-
 
     @Test
     public void getCustomersTest() throws Exception {
