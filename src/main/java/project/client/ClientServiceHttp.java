@@ -29,8 +29,7 @@ public class ClientServiceHttp {
         ResponseEntity<List<Petstore>> response;
         try {
             response = restTemplate.exchange(
-                    petstoreUrl + "?"
-                            + STATUS + "=" + status,
+                    petstoreUrl + "?" + STATUS + "=" + status,
                     HttpMethod.GET,
                     null,
                     new ParameterizedTypeReference<List<Petstore>>() {
