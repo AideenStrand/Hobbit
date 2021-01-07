@@ -1,5 +1,6 @@
 package project.service;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import project.data.Petstore;
 import project.data.ResponseJson;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
@@ -23,7 +25,6 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class ControllerTest {
 
-    private final static String baseUrl = "http://localhost:";
     @Autowired
     private RestTemplate restTemplate;
 
@@ -35,6 +36,12 @@ public class ControllerTest {
     @MockBean
     ClientServiceHttp clientServiceHttp;
 
+    private final static String LOCAT_HOST = "http://localhost:";
+
+    private String PORT = "8082";
+
+    private final static String Available_Customer_URL = "/api/client";
+
     @Test
     public void mytest() {
         List<ResponseJson> responseJsonList = new ArrayList<>();
@@ -45,19 +52,31 @@ public class ControllerTest {
                 .personalId("123").myBuild();
         responseJson.setCostumerInformation(costumerInformation);
         responseJsonList.add(responseJson);
-        // Assert.assertEquals("true", "true");
         List<Petstore> petstoreList = new ArrayList<>();
         Petstore petstore = new Petstore();
         petstore.setName("name");
         petstore.setId("id");
         petstoreList.add(petstore);
-
-
-        String url = baseUrl + "8082" + "/api/client";
-        ResponseEntity<ResponseJson[]> responseEntity = restTemplate.getForEntity(url,
-                ResponseJson[].class);
+        when(clientServiceHttp.fetchCustomers(null))
+                .thenReturn(Collections.singletonList(petstore));
         clientController.getAvailabelCustomers();
-        when(clientServiceHttp.fetchCustomers(null)).thenReturn(petstoreList);
+        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(LOCAT_HOST
+                        + PORT + Available_Customer_URL,
+                Object[].class);
+        Assert.assertEquals(200, responseEntity.getStatusCodeValue());
+
     }
 
+   /* public <T> ResponseEntity<T> getForEntityRest(String url){
+
+        ResponseEntity<ResponseJson> responseEntity;
+
+        responseEntity = restTemplate.exchange(url,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<ResponseJson>() {
+                });
+
+        return responseEntity.getBody();*/
+    //}
 }

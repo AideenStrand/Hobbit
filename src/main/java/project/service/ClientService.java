@@ -34,15 +34,12 @@ public class ClientService implements TimeRegister {
 
     public List<ResponseJson> getCustomers(String status) {
         List<Petstore> petstore = null;
-
         //if(status != null || AVAILABLE.equals(status)){
-          petstore = clientServiceHttp.fetchCustomers(status);
-      //  }
-
+        petstore = clientServiceHttp.fetchCustomers(status);
+        //  }
         List<ResponseJson> responseJsonList = new LinkedList<>();
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation;
-
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
@@ -52,7 +49,6 @@ public class ClientService implements TimeRegister {
                         .personalId(petstore.stream().map(c -> c.getId())
                                 .findFirst().orElse(CONSTANT_NUMBER))
                         .myBuild();
-
                 responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
                 responseJson.setCostumerInformation(costumerInformation);
                 responseJsonList.add(responseJson);
@@ -91,7 +87,6 @@ public class ClientService implements TimeRegister {
                         !ZERO.equals(petStore.getCategory().getId()))
                 .map(petStore -> mapRequest(petStore, orderRequest))
                 .findFirst().orElse(null);
-
         ResponseEntity<OrderRequest> response = orderServiceHttp.registerOrder(request, OrderRequest.class);
         return response.getBody();
 
