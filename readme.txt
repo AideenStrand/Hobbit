@@ -1,11 +1,13 @@
 api test :
 
 Backend:
-localhost:8080/api/client/available
-localhost:8080/api/order
+localhost:8081/api/client/available
+localhost:8081/api/order
 
 Frontend:
-http://localhost:8080/customer
+http://localhost:8081/customer
 
-test5
+swager:
+localhost:8081/v2/api-docs
+
 

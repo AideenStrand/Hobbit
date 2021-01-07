@@ -33,22 +33,29 @@ public class ClientService implements TimeRegister {
     private final static String CONSTANT_NUMBER = "9222968140491051141";
 
     public List<ResponseJson> getCustomers(String status) {
-        List<Petstore> petstore = null;
-       // if(status != null || AVAILABLE.equals(status)){
+        List<Petstore> petstore;
+
         petstore = clientServiceHttp.fetchCustomers(status);
-        //  }
+
+        if(petstore == null || petstore.isEmpty()){
+            petstore = Collections.EMPTY_LIST;
+        }
+
         List<ResponseJson> responseJsonList = new LinkedList<>();
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation;
+
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
                 costumerInformation = new CostumerInformation.MyBuilder()
                         .name(name.getKey().toString())
                         .family(name.getValue().toString())
-                        .personalId(petstore.stream().map(c -> c.getId())
+                        .personalId(petstore.stream()
+                                .map(c -> c.getId())
                                 .findFirst().orElse(CONSTANT_NUMBER))
                         .myBuild();
+
                 responseJson.setCompleteName(costumerInformation.getName() + "  " + costumerInformation.getFamily());
                 responseJson.setCostumerInformation(costumerInformation);
                 responseJsonList.add(responseJson);
