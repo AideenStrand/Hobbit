@@ -63,8 +63,10 @@ public class ClientServiceTest {
         petstore.setName("name");
         petstore.setId(ID);
         petstoreList.add(petstore);
+
         when(clientServiceHttp.fetchCustomers("available"))
                 .thenReturn(Collections.singletonList(petstore));
+        
         ResponseEntity<List<ResponseJson>> responseEntity = clientController.getAvailabelCustomers(AVAILABLE);
 
        /* ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(LOCAT_HOST

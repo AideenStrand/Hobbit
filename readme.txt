@@ -8,6 +8,6 @@ Frontend:
 http://localhost:8081/customer
 
 swager:
-localhost:8081/v2/api-docs
+http://localhost:8081/swagger-ui.html
 
 
