@@ -25,8 +25,8 @@ import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 
-/*@RunWith(SpringRunner.class)
-@SpringBootTest*/
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class ClientServiceTest {
 
 /*    @Autowired
