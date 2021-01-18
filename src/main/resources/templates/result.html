@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+    <link th:href="@{/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{/main.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<!--<p th:text="${customerList[0].getCostumerInformation().getFamily()}" />-->
+<div class="container p-3 my-3 bg-dark text-white">
+    <h1 style="color:#FFA500">List of available Customers</h1>
+    <p style="color:#cf4e1b">There is list of all available customers </p>
+</div>
+<div class="container-fluid" th:if="${not #lists.isEmpty(customerList)}">
+    <table class="centerResult">
+        <tr style="color:#cf4e1b">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Family</th>
+            <th>PersonalId</th>
+        </tr>
+        <tr th:each="customer : ${customerList}">
+            <td th:text="${customer.getCompleteName()}"></td>
+            <td th:text="${customer.getCostumerInformation().getName()}"></td>
+            <td th:text="${customer.getCostumerInformation().getFamily()}"></td>
+            <td th:text="${customer.getCostumerInformation().getPersonalId()}"></td>
+        </tr>
+    </table>
+
+    <div class="center">
+        <input class="button5" type="submit" value="Edit"/>
+        <input class="button5" type="submit" value="Approve"/>
+        <input class="button5" type="submit" value="Delete"/>
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+server:
+  port: 8081
+  error:
+    whitelabel:
+      enabled: false
+  servlet:
+    contextPath: /
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        prometheus: metrics
+      exposure:
+        include: prometheus, health
+  metrics:
+    web:
+      server:
+        requestsMetricName: application:request
+opentracing:
+  jaeger:
+    log-spans: false
+    udp-sender:
+      host: localhost
+      port: 5775
+    const-sampler.decision: true
+    remote-reporter:
+      flush-interval: 1000
+      max-queue-size: 10000
+httpTimeout: 10
+---
+#local setting
+spring:
+  profiles: local
+opentracing:
+  jaeger:
+    log-spans: true
+server:
+  port: 8081
+remedy:
+  username:
+    secret: web
+  password:
+    secret: spring2021
+client:
+  petstore:
+    url: https://petstore.swagger.io/v2/pet/findByStatus
+  order:
+    url: https://petstore.swagger.io/v2/store/order
