@@ -47,7 +47,6 @@ public class ClientServiceTest {
     private String AVAILABLE = "available";
     private String ID = "id";
 
-
     @Test
     public void CustomerAvailableTest() {
         List<ResponseJson> responseJsonList = new ArrayList<>();
@@ -63,17 +62,14 @@ public class ClientServiceTest {
         petstore.setName("name");
         petstore.setId(ID);
         petstoreList.add(petstore);
-
         when(clientServiceHttp.fetchCustomers("available"))
                 .thenReturn(Collections.singletonList(petstore));
-        
         ResponseEntity<List<ResponseJson>> responseEntity = clientController.getAvailabelCustomers(AVAILABLE);
-
-
         Assert.assertEquals(200, responseEntity.getStatusCodeValue());
         Assert.assertNotNull(responseEntity.getBody());
         Assert.assertEquals(Optional.of(ID), responseEntity.getBody()
-                .stream().map(i -> i.getCostumerInformation().getPersonalId()).findFirst());
+                .stream().map(i -> i.getCostumerInformation()
+                        .getPersonalId()).findFirst());
 
     }
 
