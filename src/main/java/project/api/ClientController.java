@@ -1,6 +1,5 @@
 package project.api;
 
-import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import project.data.OrderRequest;
 import project.data.ResponseJson;
 import project.service.ClientService;
+
+import javax.json.JsonPatch;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
@@ -76,4 +77,6 @@ public class ClientController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }
+

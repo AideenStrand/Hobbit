@@ -1,6 +1,5 @@
 package project.service;
 
-import com.github.fge.jsonpatch.JsonPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +9,7 @@ import project.client.DatabaseHttp;
 import project.client.OrderServiceHttp;
 import project.data.*;
 
+import javax.json.JsonPatch;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -107,6 +107,7 @@ public class ClientService implements TimeRegister {
     }
 
     public String modifyInfo(JsonPatch jsonPatch) {
+
         return null;
     }
 

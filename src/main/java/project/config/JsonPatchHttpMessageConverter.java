@@ -1,6 +1,5 @@
 package project.config;
 
-import com.github.fge.jsonpatch.JsonPatch;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
@@ -10,6 +9,7 @@ import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.stereotype.Component;
 
 import javax.json.Json;
+import javax.json.JsonPatch;
 import javax.json.JsonReader;
 import javax.json.JsonWriter;
 
