@@ -8,11 +8,14 @@ import project.client.ClientServiceHttp;
 import project.client.DatabaseHttp;
 import project.client.OrderServiceHttp;
 import project.data.*;
-
+import javax.json.JsonArray;
+import javax.json.JsonObject;
 import javax.json.JsonPatch;
+import javax.json.JsonValue;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -31,20 +34,22 @@ public class ClientService implements TimeRegister {
     private final static String ZERO = "0";
     private final static String AVAILABLE = "available";
     private final static String CONSTANT_NUMBER = "9222968140491051141";
+    private final static String OP = "op";
+    private final static String PATH = "path";
+    private final static String VALUE = "value";
+    private final static String TELEPHONE = "/telephone";
+    private final static String COUNTRY = "/country";
+    private final static String CITY = "/city";
 
     public List<ResponseJson> getCustomers(String status) {
         List<Petstore> petstore;
-
         petstore = clientServiceHttp.fetchCustomers(status);
-
-        if(petstore == null || petstore.isEmpty()){
+        if (petstore == null || petstore.isEmpty()) {
             petstore = Collections.EMPTY_LIST;
         }
-
         List<ResponseJson> responseJsonList = new LinkedList<>();
         HashMap<String, String> customerName = nameFamilyMaker();
         CostumerInformation costumerInformation;
-
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
                 ResponseJson responseJson = new ResponseJson();
@@ -55,7 +60,6 @@ public class ClientService implements TimeRegister {
                                 .map(c -> c.getId())
                                 .findFirst().orElse(CONSTANT_NUMBER))
                         .myBuild();
-
                 responseJson.setCompleteName(costumerInformation.getName() + "  "
                         + costumerInformation.getFamily());
                 responseJson.setCostumerInformation(costumerInformation);
@@ -106,14 +110,33 @@ public class ClientService implements TimeRegister {
         return request;
     }
 
-    public String modifyInfo(JsonPatch jsonPatch) {
-
+    public String changeInfo(JsonPatch jsonPatch) {
+        ValidateUrl(jsonPatch.toJsonArray());
         return null;
     }
 
-    public Map<String, String> ValidateUrl() {
-        Map<String, String> pathUrl = new HashMap<>();
-        return pathUrl;
+    private String ValidateUrl(JsonArray jsonList) {
+        for (JsonValue jsonValue : jsonList) {
+            JsonObject jsonObject = jsonValue.asJsonObject();
+            String s = jsonObject.entrySet().stream()
+                    .filter(c -> PATH.equals(c.getKey()))
+                    .map(m -> m.getValue().toString())
+                    .collect(Collectors.joining());
 
+            if (CheckPath(s.substring(1, s.length() - 1))) {
+
+            }
+            else{
+                throw new IllegalArgumentException("json patch path request is not match");
+            }
+        }
+            //System.out.println(jsonObject.getJsonArray("op"));
+            return null;
+    }
+
+    private boolean CheckPath(String path) {
+        List<String> pathList = Arrays.asList(TELEPHONE, COUNTRY, CITY);
+        return  pathList.stream()
+                .anyMatch(c->path.equals(c));
     }
 }

@@ -71,8 +71,7 @@ public class ClientController {
     public ResponseEntity<String> getpatch(
             @RequestBody JsonPatch jsonPatch) {
         try {
-            System.out.println("");
-            return new ResponseEntity<String>(clientService.modifyInfo(jsonPatch), HttpStatus.OK);
+            return new ResponseEntity<String>(clientService.changeInfo(jsonPatch), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

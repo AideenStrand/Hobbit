@@ -53,5 +53,5 @@ public class RestTemplateConfig {
         c.setIgnoreUnresolvablePlaceholders(true);
         return c;
     }
-    
+
 }
