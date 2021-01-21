@@ -7,6 +7,7 @@ public class ResponseJson {
 
     private String CompleteName;
     private CostumerInformation costumerInformation;
+    private CustomerAddress customerAddress;
 
     public void setCompleteName(String completeName) {
         CompleteName = completeName;
@@ -22,6 +23,14 @@ public class ResponseJson {
 
     public CostumerInformation getCostumerInformation() {
         return costumerInformation;
+    }
+
+    public CustomerAddress getCustomerAddress() {
+        return customerAddress;
+    }
+
+    public void setCustomerAddress(CustomerAddress customerAddress) {
+        this.customerAddress = customerAddress;
     }
 }
 

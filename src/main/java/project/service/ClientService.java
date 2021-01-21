@@ -1,6 +1,8 @@
 package project.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -49,10 +51,13 @@ public class ClientService implements TimeRegister {
         }
         List<ResponseJson> responseJsonList = new LinkedList<>();
         HashMap<String, String> customerName = nameFamilyMaker();
+
         CostumerInformation costumerInformation;
         if (fixBirthDate(BIRTHDATE)) {
             for (Map.Entry name : customerName.entrySet()) {
+
                 ResponseJson responseJson = new ResponseJson();
+
                 costumerInformation = new CostumerInformation.MyBuilder()
                         .name(name.getKey().toString())
                         .family(name.getValue().toString())
@@ -60,9 +65,18 @@ public class ClientService implements TimeRegister {
                                 .map(c -> c.getId())
                                 .findFirst().orElse(CONSTANT_NUMBER))
                         .myBuild();
+
                 responseJson.setCompleteName(costumerInformation.getName() + "  "
                         + costumerInformation.getFamily());
                 responseJson.setCostumerInformation(costumerInformation);
+
+                CustomerAddress customerAddress = new CustomerAddress.Builder()
+                        .city("stockholm")
+                        .postCode("1456")
+                        .country("sweden")
+                        .build();
+
+                responseJson.setCustomerAddress(customerAddress);
                 responseJsonList.add(responseJson);
             }
         }

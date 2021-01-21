@@ -4,12 +4,12 @@ public class CustomerAddress {
 
     private final String city;
     private final String postCode;
-    private final String street;
+    private final String country;
 
     public CustomerAddress(Builder builder) {
         this.city = builder.city;
         this.postCode = builder.postCode;
-        this.street = builder.street;
+        this.country = builder.country;
     }
 
     public String getCity() {
@@ -20,15 +20,15 @@ public class CustomerAddress {
         return postCode;
     }
 
-    public String getStreet() {
-        return street;
+    public String getCountry() {
+        return country;
     }
 
     public static class Builder {
 
         private String city;
         private String postCode;
-        private String street;
+        private String country;
 
         public Builder city(String city) {
             this.city = city;
@@ -40,8 +40,8 @@ public class CustomerAddress {
             return this;
         }
 
-        public Builder street(String street) {
-            this.street = street;
+        public Builder country(String country) {
+            this.country = country;
             return this;
         }
 

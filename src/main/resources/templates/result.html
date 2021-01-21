@@ -20,12 +20,18 @@
             <th>Name</th>
             <th>Family</th>
             <th>PersonalId</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>PostCode</th>
         </tr>
         <tr th:each="customer : ${customerList}">
             <td th:text="${customer.getCompleteName()}"></td>
             <td th:text="${customer.getCostumerInformation().getName()}"></td>
             <td th:text="${customer.getCostumerInformation().getFamily()}"></td>
             <td th:text="${customer.getCostumerInformation().getPersonalId()}"></td>
+            <td th:text="${customer.getCustomerAddress().getCountry()}"></td>
+            <td th:text="${customer.getCustomerAddress().getCity()}"></td>
+            <td th:text="${customer.getCustomerAddress().getPostCode()}"></td>
         </tr>
     </table>
 
