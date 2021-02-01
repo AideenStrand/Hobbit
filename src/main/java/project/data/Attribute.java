@@ -2,8 +2,8 @@ package project.data;
 
 public enum Attribute {
 
-    ID("id"),
-    NAME("name");
+    REPLACE("replace"),
+    ADD("add");
 
     private String value;
 

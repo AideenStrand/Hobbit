@@ -132,12 +132,15 @@ public class ClientService implements TimeRegister {
     private String ValidateUrl(JsonArray jsonList) {
         for (JsonValue jsonValue : jsonList) {
             JsonObject jsonObject = jsonValue.asJsonObject();
-            String s = jsonObject.entrySet().stream()
-                    .filter(c -> PATH.equals(c.getKey()))
-                    .map(m -> m.getValue().toString())
-                    .collect(Collectors.joining());
 
-            if (CheckPath(s.substring(1, s.length() - 1))) {
+            if(jsonObject.entrySet().stream().filter(op -> OP.equals(op.getKey()))
+                .anyMatch(opValue -> Attribute.REPLACE.toString().equals(opValue.getValue().toString()
+                        .substring(1, opValue.getValue().toString().length() - 1)))){
+
+                CheckPath(jsonObject.entrySet().stream()
+                        .filter(c -> PATH.equals(c.getKey()))
+                        .map(m -> m.getValue().toString().substring(1, m.getValue().toString().length()-1))
+                        .collect(Collectors.joining()));
 
             }
             else{
